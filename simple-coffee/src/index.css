@@ -1,0 +1,11 @@
+.main-container{
+  min-height: 100vh;
+  min-width: 100vh;
+  background: url("./assets/bg-cafe.jpg");
+  background-repeat: no-repeat;
+  background-color: #111315;
+}
+.card{
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+  background-color: aliceblue;
+}
