@@ -7,7 +7,6 @@
                 expertly roasted in small batches and shipped fresh weekly.</p>
 
                 <button>All Products</button>
-
                 <button>Available Now</button>
         </div>
     );
