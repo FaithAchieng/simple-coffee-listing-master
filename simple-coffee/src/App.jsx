@@ -1,12 +1,16 @@
 import Card from './Card';
+import AuthorInfo from './AuthorInfo';
 
 function App() {
   return(
     <>
-    
-      <div className="main-container">
-          <Card />
-      </div>
+        <div className="main-container">
+            <Card />
+        </div>
+      
+      <AuthorInfo />
+          
+      
     </>
   );
 }

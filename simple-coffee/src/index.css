@@ -1,11 +1,36 @@
-.main-container{
-  min-height: 100vh;
-  min-width: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body{
   background: url("./assets/bg-cafe.jpg");
   background-repeat: no-repeat;
   background-color: #111315;
+  height: 100vh;
 }
+.main-container{
+  min-height: 100vh;
+  min-width: 100vh;
+  display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
 .card{
   box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
   background-color: aliceblue;
+}
+.author-info {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 16px;
+  color: rgb(55, 65, 81);
+}
+
+.author-info a {
+  text-decoration: none;
 }
