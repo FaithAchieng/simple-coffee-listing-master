@@ -22,17 +22,36 @@ body{
 
 .card{
   box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
-  background-color: aliceblue;
+  background-color: #1B1D1F;
+  padding: 30px;
+  width: 90%;
   
 }
 .card h1{
-  font-family: "DM+Sans",sans-serif;
+  font-family: "DM+Sans";
   font-size: 32px;
   text-align: center;
+  margin-bottom: 20px;
+  color: #FEF7EE;
 }
 .card p{
-  font-family: "DM+Sans",sans-serif;
-  font-size: 16px; 
+  font-family: "DM+Sans";
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #6F757C;
+}
+.card button{
+  background-color: #6F757C;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #FEF7EE;
+}
+.title{
+  text-align: center;
+  width: 40%;
+  margin-left: 350px;
 }
 .author-info {
   font-size: 14px;
@@ -49,6 +68,21 @@ body{
   justify-content: center;
 }
 .coffee-card{
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
-  background-color: aliceblue;
+  background-color: #1B1D1F;
+  width: 27%;
+  padding: 10px;
+}
+.coffee-details{
+  display: flex;
+  flex-direction: row;
+}
+.coffee-details span{
+  margin-left: 130px;
+  border: none;
+  background-color: #BEE3CC;
+  text-align: center;
+  width: 70px;
+  height: 20px;
+  border-radius: 5px;
+  
 }
