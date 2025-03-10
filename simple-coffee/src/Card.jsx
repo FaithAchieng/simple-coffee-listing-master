@@ -1,14 +1,21 @@
+ import { useState,useEffect } from "react";
+ 
  function Card(props){
+    const [coffeeData,setCoffeeData]=useState([]);
+    useEffect(()=>{
     fetch(
         "https://raw.githubusercontent.com/devchallenges-io/curriculum/refs/heads/main/4-frontend-libaries/challenges/group_1/data/simple-coffee-listing-data.json"
       )
         .then((response) => response.json())
         .then((data) => {
-          
+          setCoffeeData(data);
+
         })
         .catch((error) => {
           // Handle any errors here
         });
+    });
+        
     return(
         <div className="card">
             <div className="title">
@@ -20,7 +27,7 @@
                 <button>All Products</button>
                 <button>Available Now</button>
             </div>
-           
+            
                 <div className="coffee-card">
             
                     <img src="https://csyxkpbavpcrhwqhcpyy.supabase.co/storage/v1/object/public/assets/coffee-challenge/cappuccino.jpg" alt="Coffee cup"></img>
