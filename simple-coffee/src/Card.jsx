@@ -12,7 +12,7 @@
 
         })
         .catch((error) => {
-          // Handle any errors here
+  console.log(error);
         });
     });
         
