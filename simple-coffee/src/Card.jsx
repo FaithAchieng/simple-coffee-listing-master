@@ -1,49 +1,63 @@
- import { useState,useEffect } from "react";
- 
- function Card(props){
-    const [coffeeData,setCoffeeData]=useState([]);
-    useEffect(()=>{
+import { useState, useEffect } from "react";
+
+function Card() {
+  const [coffeeData, setCoffeeData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
     fetch(
-        "https://raw.githubusercontent.com/devchallenges-io/curriculum/refs/heads/main/4-frontend-libaries/challenges/group_1/data/simple-coffee-listing-data.json"
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          setCoffeeData(data);
+      "https://raw.githubusercontent.com/devchallenges-io/curriculum/refs/heads/main/4-frontend-libaries/challenges/group_1/data/simple-coffee-listing-data.json"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Fetched Data:", data); // Debug API response
+        setCoffeeData(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      });
+  }, []);
 
-        })
-        .catch((error) => {
-  console.log(error);
-        });
-    });
-        
-    return(
-        <div className="card">
-            <div className="title">
-                        <h1>Our Collection</h1>
+  return (
+    <div className="card">
+      <div className="title">
+        <h1>Our Collection</h1>
+        <p>
+          Introducing our Coffee Collection, a selection of unique coffees from
+          different roast types and origins, expertly roasted in small batches
+          and shipped fresh weekly.
+        </p>
+        <button>All Products</button>
+        <button>Available Now</button>
+      </div>
 
-            <p>Introducing our Coffee Collection, a selection of unique coffees from different roast types and origins, 
-                expertly roasted in small batches and shipped fresh weekly.</p>
-
-                <button>All Products</button>
-                <button>Available Now</button>
-            </div>
-            
-                <div className="coffee-card">
-            
-                    <img src="https://csyxkpbavpcrhwqhcpyy.supabase.co/storage/v1/object/public/assets/coffee-challenge/cappuccino.jpg" alt="Coffee cup"></img>
-                    <div className="coffee-details">
-                    <p>Cappucinno </p>&nbsp;
-                    <span>$5.20</span>
-                    </div>
-                    <div className="coffee-ratings">
-                        <img src="./src/assets/Star_fill.svg" alt="" />
-                        <p className="rating">4.7</p> (65 votes)
-                    </div>
-                    
-                    
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className="coffee-list">
+          {coffeeData.length === 0 ? (
+            <p>No data available</p>
+          ) : (
+            coffeeData.map((coffee) => (
+              <div className="coffee-card" key={coffee.id}>
+                <img src={coffee.image} alt={coffee.name} />
+                <div className="coffee-details">
+                  <p>{coffee.name}</p>&nbsp;
+                  <span>${coffee.price ? Number(coffee.price).toFixed(2) : "N/A"}</span>
                 </div>
-                
+                <div className="coffee-ratings">
+                  <img src="./src/assets/Star_fill.svg" alt="Star icon" />
+                  <p className="rating">{coffee.rating}</p> ({coffee.votes} votes)
+                </div>
+              </div>
+            ))
+          )}
         </div>
-    );
- }
- export default Card
+      )}
+    </div>
+  );
+}
+
+export default Card;
