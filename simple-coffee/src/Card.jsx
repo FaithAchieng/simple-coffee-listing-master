@@ -40,19 +40,21 @@ function Card() {
           {coffeeData.length === 0 ? (
             <p>No data available</p>
           ) : (
-            coffeeData.map((coffee) => (
-              <div className="coffee-card" key={coffee.id}>
-                <img src={coffee.image} alt={coffee.name} />
-                <div className="coffee-details">
-                  <p>{coffee.name}</p>&nbsp;
-                  <span>${coffee.price ? Number(coffee.price).toFixed(2) : "N/A"}</span>
+            <div className="coffee-container">
+              {coffeeData.map((coffee) => (
+                <div className="coffee-card" key={coffee.id}>
+                  <img src={coffee.image} alt={coffee.name} />
+                  <div className="coffee-details">
+                    <p>{coffee.name}</p>&nbsp;
+                    <span>{coffee.price }</span>
+                  </div>
+                  <div className="coffee-ratings">
+                    <img src="./src/assets/Star_fill.svg" alt="Star icon" />
+                    <p className="rating">{coffee.rating}</p> &nbsp;({coffee.votes} votes)
+                  </div>
                 </div>
-                <div className="coffee-ratings">
-                  <img src="./src/assets/Star_fill.svg" alt="Star icon" />
-                  <p className="rating">{coffee.rating}</p> ({coffee.votes} votes)
-                </div>
-              </div>
-            ))
+              ))}
+            </div>
           )}
         </div>
       )}

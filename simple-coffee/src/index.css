@@ -67,10 +67,16 @@ body{
   align-items: center;
   justify-content: center;
 }
+.coffee-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  gap: 20px; /* Adjust spacing */
+}
 .coffee-card{
   background-color: #1B1D1F;
   width: 27%;
   padding: 10px;
+
 }
 .coffee-details{
   display: flex;
@@ -85,4 +91,11 @@ body{
   height: 20px;
   border-radius: 5px;
   
+}
+.coffee-details p{
+  color: #FEF7EE;
+}
+.coffee-ratings{
+  display: flex;
+  flex-direction: row;
 }
