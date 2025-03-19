@@ -94,8 +94,8 @@ body{
 }
 .coffee-details p{
   color: #FEF7EE;
+  white-space:nowrap;
 }
 .coffee-ratings{
-  display: flex;
-  flex-direction: row;
+  white-space: nowrap;
 }

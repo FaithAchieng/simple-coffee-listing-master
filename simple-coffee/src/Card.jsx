@@ -50,7 +50,7 @@ function Card() {
                   </div>
                   <div className="coffee-ratings">
                     <img src="./src/assets/Star_fill.svg" alt="Star icon" />
-                    <p className="rating">{coffee.rating}</p> &nbsp;({coffee.votes} votes)
+                    <p className="rating">{coffee.rating} ({coffee.votes} votes)</p>
                   </div>
                 </div>
               ))}
