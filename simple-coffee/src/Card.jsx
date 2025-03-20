@@ -40,6 +40,7 @@ function Card() {
           {coffeeData.length === 0 ? (
             <p>No data available</p>
           ) : (
+            // start of the card
             <div className="coffee-container">
               {coffeeData.map((coffee) => (
                 <div className="coffee-card" key={coffee.id}>
